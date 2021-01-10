@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>PHP Motors HomePage | Toba A. Obiwale|CSE 340</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
   <link href="/phpmotors/styles/small.css" type="text/css" rel="stylesheet" media="screen">
   <link href="/phpmotors/styles/large.css" type="text/css" rel="stylesheet" media="screen">
 <body>
@@ -12,9 +14,7 @@
     <header>
       <div class="homepage">
             <img src="/phpmotors/images/site/logo.png" alt="PHP Logo">
-      <!-- </div>
-
-      <div class="side-account"> -->
+      
             <a href="account.php">My Account</a>
       </div>
     </header>
@@ -32,17 +32,62 @@
         </nav>
 
         <div class="page-content">
-            <h1> Content Title Here </h1>
+                <h1> Welcome to PHP Motors </h1>
+                    <h2>DMC Delorean</h2>
+                    <p>3 Cup holders <br>
+                    Superman doors <br>
+                    Fuzzy dice! </p>
+        </div>
+
+        <div class="button-click">
+                <img src="/phpmotors/images/site/own_today.png">
+            </div>
+
+            <div class="content-pic">
+            <img src="/phpmotors/images/upgrades/delorean-497.jpg">
+            </div>
+
+        <div class="container">
+            <div class="box-a">
+                <img src="/phpmotors/images/upgrades/flux-cap.png" alt="Flux Cap">
+                <figcaption>flux Cap</figcaption>
+            </div>
+
+            <div class="box-b">
+                <img src="/phpmotors/images/upgrades/flame.png" alt="Flame">
+                <figcaption>flame</figcaption>
+            </div>   
+            
+            <div class="box-c">
+                <img src="/phpmotors/images/upgrades/bumper sticker.png" alt="Bumper Sticker">
+                <figcaption>Bumper Sricker</figcaption>
+            </div>   
+            
+            <div class="box-d">
+                <img src="/phpmotors/images/upgrades/hub-cap.png" alt="Hub Cap">
+                <figcaption>Hub-Cap</figcaption>
+            </div>    
+        </div> 
+
+        <div class="box-e">
+            <h4>DMC Delorean Review</h4>
+                <p>"So fast its just like traveling in time."(4/5)</p>
+                <p><strong>.</strong>"Coolest ride on the road." (4/5)</p>
+                <p><strong>.</strong>"I am feeling Marty McFly." (5/5)</p>
+                <p><strong>.</strong>"So fast its just like traveling in time." (4/5)</p>
+                <p><strong>.</strong>"The most futuristic ride of our days." (4.5/5)</p>
+                <p><strong>.</strong>"80's livivng and i love it." (5/5)<br>
         </div>
 
     </main>
 
-    <hr>
+    <hr class="line">
     
     <footer>
     &copy; PHP Motors, All rights reserved. <br>
             All images used are believed to be in "Fair Use". Please notify the author if any are not and will be removed.<br>
-   Last  Updated: 30 March . 2018
-    </footer>
+            Last  Updated: 30 March . 2018
+    </footer> -->
     
 </body>
+</html>

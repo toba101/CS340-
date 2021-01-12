@@ -1,7 +1,7 @@
-@media only screen and (min-width: 920px) {  
+@media all and (min-width: 920px) {  
         html{
             background-image: url("../images/site/small_check.jpg");
-        }     
+        }
         
         body { 
             background-color: #ffffff;
@@ -21,16 +21,16 @@
         }
         
         .homepage a {
-           margin-left: 7rem;
-           padding-top: 2rem;
+           margin-left: 30rem;
+           padding-top: 1.5rem;
         }
-        
+         
         /*********** NAVIGATION HERE********* */
         nav {
             font-size: 1rem;
             background-color: #3a3a3a;
-        
         }
+
         nav ul {
             list-style-type: none;
             margin: 0;
@@ -38,25 +38,20 @@
             display: flex;
             font-weight: 700;
         }
-        
+
         nav ul li {
             cursor: pointer;
             padding: 10px;
+            margin: 2px;
         }
-        
-        nav ul li:hover {
-            background-color: #4c96d7;
-        }
-        
+
         nav ul li a {
             color: #ffffff;
-        }
-        
-        nav ul {
-            flex-direction: column;
-            }
-        nav ul li {
-            text-align: center;
+            
+        } 
+
+        nav ul li:hover {
+            background-color: #4c96d7;
         }
         
         /*********** MAIN HERE********* */
@@ -101,14 +96,17 @@
         .container {
             display: grid;
             grid-template-columns: repeat(2, 2fr);
-            grid-gap: 4rem;
+            grid-gap: 3rem;
             float: left;
-            width: 15px;
-            margin-top: 3rem;
-            margin-left: 0px;
+            width: 5px;
+            margin-left: 5px;
             padding-left: 4rem;
         }
           
+        h4 {
+           padding-left: 7rem; 
+        }
+
         .box {
             border-radius: 5px;
             font-size: 100%;  
@@ -144,8 +142,11 @@
         .box-e h4 {
             text-align: right;
             margin-right: 7rem;
-        }
-        
+            margin-top: 1rem;
+            padding-left: 4rem;
+        } 
+
+         
         /*********** Border ************/
         hr.new3 {
             border-top: 1px rgb(8, 8, 8);
@@ -158,4 +159,4 @@
             margin: 0.5rem;
             font-size: 15px; 
         }
-    }
+} 

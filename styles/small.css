@@ -1,6 +1,7 @@
-@media screen (min-width: 450px) {  
+@media all and (min-width: 550px) {  
 html {
     background-image: url("../images/site/small_check.jpg");
+    font-family: 'Roboto Slab', serif;
 }     
 
 body { 
@@ -21,7 +22,7 @@ body {
 }
 
 .homepage a {
-   margin-left: 7rem;
+   margin-left: 4rem;
    padding-top: 2rem;
 }
 
@@ -42,24 +43,20 @@ nav ul {
 nav ul li {
     cursor: pointer;
     padding: 10px;
+    margin: 2px;
 }
+
+nav ul li a {
+    color: #ffffff;
+    
+} 
 
 nav ul li:hover {
     background-color: #4c96d7;
 }
 
-nav ul li a {
-    color: #ffffff;
-}
-
-nav ul {
-    flex-direction: column;
-    }
-nav ul li {
-    text-align: center;
-}
-
-@media all and (max-width: 650px) {
+ 
+@media all and (max-width: 450px) {
     nav ul {
         flex-direction: column;
 }
@@ -69,8 +66,9 @@ nav ul li {
     }
 
 .content-pic img {
-width: 247%;
+width: 80%;
 }
+
 
 /*********** MAIN HERE********* */
 main {
@@ -114,10 +112,10 @@ main h2 {
 .container {
     display: grid;
     grid-template-columns: repeat(2, 2fr);
-    grid-gap: 4rem;
+    grid-gap: 2rem;
     float: left;
     width: 15px;
-    margin-bottom: 5rem; 
+    margin-bottom: 50rem; 
     margin-left: 0px;
     padding-left: 4rem;
 }
@@ -131,18 +129,18 @@ div.box-a.img {
      text-align: left;
 }
 
-div.box-a figcaption {
+div.box-a p {
     margin-left: 1rem;
 }
 
-div.box-b figcaption {
+div.box-b p {
     margin-left: 1.5rem;
 }
 
-div.box-c figcaption {
+div.box-c p {
     margin-left: 1rem;
 }
-div.box-d figcaption {
+div.box-d p {
     margin-left: 1rem;
 }
 
@@ -157,12 +155,12 @@ div.box-d figcaption {
 .box-e h4 {
     text-align: right;
     margin-right: 7rem;
-}
+} 
 
 /*********** Border ************/
 hr.new3 {
     border-top: 1px rgb(8, 8, 8);
-  } 
+} 
 
 footer {
     text-align: center;
@@ -170,5 +168,6 @@ footer {
     padding: 5px;
     margin: 0.5rem;
     font-size: 15px; 
+}
 }
 }

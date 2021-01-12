@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en-us">
 
 <head>
   <meta charset="utf-8">
   <title>PHP Motors HomePage | Toba A. Obiwale|CSE 340</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
   <link href="/phpmotors/styles/small.css" type="text/css" rel="stylesheet" media="screen">
@@ -13,7 +13,7 @@
 
     <header>
       <div class="homepage">
-            <img src="/phpmotors/images/site/logo.png" alt="page">
+            <img src="/phpmotors/images/site/logo.png"alt="PHP-Page">
       
             <a href="home.php">My Account</a>
       </div>
@@ -40,37 +40,38 @@
             </div>
 
             <div class="button-click">
-                <img src="/phpmotors/images/site/own_today.png" alt="button">
+                <img src="/phpmotors/images/site/own_today.png"alt="Button">
             </div>
 
             <div class="content-pic">
-            <img src="/phpmotors/images/upgrades/delorean-497.jpg" alt="car">
+            <img src="/phpmotors/images/upgrades/delorean-497.jpg"alt="Car">
             </div>
 
                
             <h4>Delorean Upgrade</h4>   
         <div class="container">
+            
             <div class="box-a">
-                <img src="/phpmotors/images/upgrades/flux-cap.png" alt="flux cap">
+            
+                <img src="/phpmotors/images/upgrades/flux-cap.png"alt="Flux-Cap">
                 <p>flux Cap</p>
             </div>
 
             <div class="box-b">
-                <img src="/phpmotors/images/upgrades/flame.png" alt="flame">
+                <img src="/phpmotors/images/upgrades/flame.png"alt="Flame">
                 <p>flame</p>
             </div>   
             
             <div class="box-c">
-                <img src="/phpmotors/images/upgrades/bumper-sticker.png" alt="bumper sticker">
+                <img src="/phpmotors/images/upgrades/bumper-sticker.png"alt="Bumper-Sticker">
                 <p>Bumper Sricker</p>
             </div>   
             
             <div class="box-d">
-                <img src="/phpmotors/images/upgrades/hub-cap.png" alt="hub cap">
+                <img src="/phpmotors/images/upgrades/hub-cap.png"alt="Hub-Cap">
                 <p>Hub-Cap</p>
             </div>    
         </div> 
-                
         
                 
             <div class="box-e">
@@ -94,4 +95,4 @@
     </footer> -->
     
 </body>
-</html>
+</html> -->

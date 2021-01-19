@@ -125,6 +125,10 @@ main h2 {
     font-size: 100%;  
 }
 
+/* div.box-a {
+
+} */
+
 div.box-a.img {
      text-align: left;
 }
@@ -140,6 +144,7 @@ div.box-b p {
 div.box-c p {
     margin-left: 1rem;
 }
+
 div.box-d p {
     margin-left: 1rem;
 }

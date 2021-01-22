@@ -8,6 +8,10 @@
   <link href="/phpmotors/styles/large.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 
+
+<header>
+
+</header>
 <nav>
     <ul>
         <li><a href="home.php">Home</a></li>

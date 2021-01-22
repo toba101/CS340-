@@ -1,4 +1,4 @@
-<nav>
+ <nav>
     <ul>
         <li><a href="home.php">Home</a></li>
         <li><a href="classic.php">Classic</a></li>
@@ -7,4 +7,4 @@
         <li><a href="truck.php">Truck</a></li>
         <li><a href="used.php">Used</a></li> 
     </ul>
-</nav>
+</nav> 

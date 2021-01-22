@@ -6,4 +6,5 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@200&display=swap" rel="stylesheet">
   <link href="/phpmotors/styles/small.css" type="text/css" rel="stylesheet" media="screen">
   <link href="/phpmotors/styles/large.css" type="text/css" rel="stylesheet" media="screen">
-</head>
+</head> 
+

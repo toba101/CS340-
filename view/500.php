@@ -19,25 +19,19 @@
       </div>
     </header>
 
+  <nav>
+     <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; 
+    ?> 
+  </nav>
+
     <main>
-        <nav>
-            <ul>
-                <li><a href="home.php">Home</a></li>
-                <li><a href="classic.php">Classic</a></li>
-                <li><a href="sports.php">Sports</a></li>
-                <li><a href="suv.php">SUV</a></li>
-                <li><a href="truck.php">Truck</a></li>
-                <li><a href="used.php">Used</a></li> 
-            </ul>
-        </nav> 
+      
 
             <h2> Server Error</h2>
              <p>Sorry our connection seems to be experiencing some technical difficulties</p>
 
     <hr>
 
-    <footer>
-    &copy; PHP Motors, All rights reserved. <br>
-            All images used are believed to be in "Fair Use". Please notify the author if any are not and will be removed.<br>
-            Last  Updated: 30 March . 2018
-    </footer> 
+  <footer>
+     <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?> 
+  </footer> 

@@ -1,5 +1,5 @@
 <?php
-//MAIN PHPMOTORS MODEL
+//MAIN PHP MOTORS MODEL
 
 function getClassifications(){
     //First, create a connection object from the phpmotors connection function. 
@@ -28,3 +28,4 @@ function getClassifications(){
     //Send the array of data back to the controller (it'd better be the controller, or something is not right).
     return $classifications;
 }
+?>

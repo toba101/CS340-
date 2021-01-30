@@ -6,7 +6,7 @@
 function phpmotorsConnect()
 {
 $server = 'localhost';
-$dbname = 'phpmoto';
+$dbname = 'phpmotors';
 $username = 'iClient';
 $password = '3ZP552QsRnMdBVQ3';
 $dsn = "mysql:host=$server;dbname=$dbname";
@@ -21,5 +21,5 @@ header('Location: /phpmotors/view/500.php');
 exit;
 }
 }
-phpmotorsConnect();
+// phpmotorsConnect();
 ?>

@@ -44,14 +44,14 @@
             padding: 10px;
             margin: 2px;
         }
-
+ 
         nav ul li a {
             color: #ffffff;
             
         } 
 
         nav ul li:hover {
-            background-color: #4c96d7;
+            background-color: #68d74c;
         }
         
         /*********** MAIN HERE********* */

@@ -54,10 +54,10 @@ if (isset($message)) {
     ?>>
     </td></tr>
     <tr><td>
-    <label for="password">password:<abbr class="req">*</abbr></label>
+    <label for="clientPassword">password:<abbr class="req">*</abbr></label>
     </td><td>
     
-    <input type="password" id="password" name="password"
+    <input type="password" id="clientPassword" name="clientPassword"
      required pattern="(?=^.{8,}$)(?=.*\d)(?=.*\W+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"><br>
  
      <span class="expect">

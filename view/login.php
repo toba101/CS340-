@@ -14,9 +14,9 @@
 <main>
 <h1>Sign in</h1>
   <?php
-//  if (isset($_SESSION['message'])) {
-//   echo $_SESSION['message'];
-//  }
+ if (isset($_SESSION['message'])) {
+  echo $_SESSION['message'];
+ }
 ?> 
 <form class="add" action="/phpmotors/accounts/index.php" method="post">
 

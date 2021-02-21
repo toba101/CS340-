@@ -33,6 +33,7 @@ $classifications = getClassifications();
  }
  $navList .= '</ul>';
 
+ // Build heselect list
  $classificationDropDown  = '<label for="classificationId">Car Type</label><br>';
  $classificationDropDown  = '<select class="loginInput" name="classificationId" id="classificationId">';
  foreach ($classifications as $classification) {
@@ -71,7 +72,7 @@ case 'insertvehicle':
   if(empty($invMake) || empty($invModel) || empty($classificationId) || empty($invImage) ||
   empty($invThumbnail) || empty($invPrice ) || empty($invStock )|| empty($invColor )){
     $message = '<p>Please provide information for all empty form fields.</p>';
-    include '../view/register.php';
+    include '../view/add-vehicles.php';
     exit;
 }
   // Send the data to the model if no error exist
@@ -102,13 +103,14 @@ case 'insertvehicle':
       include '../view/add-classification.php';
    exit; 
   }
-
+  //Send the data to the model
   $regOutcome = insertclassification($classificationName);
 
   // Check and report the result
 if($regOutcome === 1){
     $message = "<p>Vehicle classification has been added</p>";
-    include '../view/add-classification.php';
+    header('Location: ../vehicles/index.php');
+    // include '../view/add-classification.php';
     exit;
     } else {
     $message = "<p>Sorry, the addition failed. The classification was not entered. Please try again.</p>";

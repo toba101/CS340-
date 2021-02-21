@@ -146,10 +146,23 @@
             padding-left: 4rem;
         } 
 
-         
+        /******Login form*************/ 
+
+fieldset.wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 10em;
+    margin: auto;
+    width: min-content;
+    }
+    
+    /********Registration******/
+
         /*********** Border ************/
         hr.new3 {
-            border-top: 1px rgb(8, 8, 8);
+            border-top: 1px rgb(34, 33, 33);
           } 
         
         footer {

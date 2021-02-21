@@ -246,7 +246,28 @@ footer {
 }
 }
 }
-/******Login form*************/
+/******Login form*************/ 
 
+fieldset.wrap {
+display: flex;
+flex-direction: column;
+text-align: center;
+flex-wrap: wrap;
+width: 10em;
+margin: auto;
+width: min-content;
+}
 
 /********Registration******/
+
+fieldset.wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    flex-wrap: wrap;
+    width: 10em;
+    margin: auto;
+    width: min-content;
+    }
+    
+  

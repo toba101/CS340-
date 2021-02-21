@@ -10,12 +10,7 @@
 
 <nav>
 <?php echo $navList; ?>
-</nav> 
-
-
-if(isset($message)){
-echo $message;
-}
+</nav>
 
 
 <h1>Add Car Classification</h1>
@@ -25,12 +20,7 @@ echo $message;
 <label id="classificationName">Classification Name<abbr class="req">*</abbr></label>
 </td><td>
 <input type="text" id="classificationName" name="classificationName" required>
-
-<?php
-if(isset($classificationName)){
-echo "value='$classificationName'";
-}
-?> 
+  
 </td></tr>
 
 <tr><td colspan="2">

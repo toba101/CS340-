@@ -10,7 +10,8 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
 <nav>
-  <?php  echo $navList; ?>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
+ <!-- echo $navList;   -->
 </nav>
 
 <main>
@@ -54,18 +55,25 @@
                 <p>Hub-Cap</p>
             </div>    
         </div> 
+         <h2>DMC Delorean Review</h2>
+        <ul class= "dolerean-list">
+            <li><p>"So fast its just like traveling in time."(4/5)</p></li>
+            <li><p><strong>.</strong>"Coolest ride on the road."(4/5)</p></li>
+            <li><p><strong>.</strong>"I am feeling Marty McFly."(5/5)</p></li>
+            <li><p><strong>.</strong>"So fast its just like traveling in time."(4/5)</p></li>
+            <li><p><strong>.</strong>"The most futuristic ride of our days."(4.5/5)</p></li>
+            <li><p><strong>.</strong>"So fast its just like traveling in time."(4/5)</p></li>
+        </ul>
                 
-        
-                
-            <div class="box-e">
+            <!-- <div class="box-e">
                 <h4>DMC Delorean Review</h4>
                 <p>"So fast its just like traveling in time."(4/5)</p>
                 <p><strong>.</strong>"Coolest ride on the road."(4/5)</p>
                 <p><strong>.</strong>"I am feeling Marty McFly."(5/5)</p>
-                <p><strong>.</strong>"So fast its just like traveling in time."(4/5)</p>
-                <p><strong>.</strong>"The most futuristic ride of our days."(4.5/5)</p>
+                
+                
                 <p><strong>.</strong>"80's livivng and i love it."(5/5)<br>
-            </div>
+            </div> -->
 
     </main>
 

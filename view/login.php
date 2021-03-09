@@ -7,16 +7,17 @@
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
-<nav>
-  <?php  echo $navList; ?>
-</nav>
+<nav><?php  echo $navList; ?></nav>
 
 <main>
 <h1>Sign in</h1>
   <?php
- if (isset($_SESSION['message'])) {
-  echo $_SESSION['message'];
- }
+  if (isset($message)) {
+    echo $_SESSION['message'];
+}
+  if (isset($_SESSION['message'])) {
+    echo $_SESSION['message'];
+   }
 ?> 
 <form action="/phpmotors/accounts/index.php" method="post">
   <fieldset class= "wrap">
@@ -35,7 +36,7 @@
     <span>Passwords must be at least 8 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
     <label>&nbsp;</label> <br>
     <input type="submit" value="sign-in">
-    <input type="hidden" name="action" value="Login">
+    <input type="hidden" name="action" value="Login-page">
   </fieldset>
  </form>
 <a class= "register" href='/phpmotors/accounts/index.php?action=register' title="myAccount">Not a member yet - Register here!</a>

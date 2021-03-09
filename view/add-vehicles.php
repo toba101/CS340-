@@ -1,4 +1,10 @@
 <?php
+if ($_SESSION['clientData']['clientLevel'] < 2) {
+ header('location: /phpmotors/');
+ exit;
+}
+?>
+<?php
 // Get the array of classifications
 $classifications = getClassifications();
 
@@ -24,7 +30,6 @@ $classificationDropDown .= '</select>';
 
 <main>
 
-
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
 <nav>
@@ -34,7 +39,6 @@ $classificationDropDown .= '</select>';
 <?php
 if(isset($message))
   echo $message;
-
 ?> 
 
 <h1> Add Vehicle </h1>
@@ -62,7 +66,7 @@ if(isset($message))
 <label for="invDescription">Description<abbr class="req"></abbr></label>
 </td><td>
 <!-- <input type="text" id="invDescription" name="invDescription" required> -->
-<textarea id="invDescription" name="invDescription" required><?php if(isset($invDescription)){echo $invDescription;} ?></textarea>
+<textarea id="invDescription" name="invDescription" required><?php if(isset($invDescription)){echo $invDescription;} ?></textarea> -->
 </td></tr>
 
 <tr><td>
@@ -124,10 +128,7 @@ required>
 
 </main>
 <hr>
-
-
-    <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
-
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
 
 </body>
 </html>

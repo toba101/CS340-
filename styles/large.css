@@ -131,7 +131,7 @@
             margin-left: 1rem;
         }
         
-        .box-e p {
+        ul dolerean-list {
             text-align: right;
             padding-right: 4rem;
             margin-bottom: 1rem;
@@ -148,7 +148,7 @@
 
         /******Login form*************/ 
 
-fieldset.wrap {
+    fieldset.wrap {
     display: flex;
     flex-direction: column;
     text-align: center;

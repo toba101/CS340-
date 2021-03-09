@@ -26,7 +26,7 @@ if (isset($message)) {
 }
 ?>
 <form class="add" action="/phpmotors/accounts/index.php" method="post">
-<input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId']?>">
+<input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId'];?>">
 <input type="hidden" name="action" value="updateClient">
 
 <table class="regForm">
@@ -70,7 +70,7 @@ if (isset($message)) {
 
 </form>
 <form class="add" action="/phpmotors/accounts/index.php" method="post">
-<input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId']?>">
+<input type="hidden" name="clientId" value="<?php echo $_SESSION['clientData']['clientId'];?>">
 <input type="hidden" name="action" value="updatePassword">
 
 <table>

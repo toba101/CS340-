@@ -8,6 +8,7 @@ require_once './model/main-model.php';
 // Get the functions library
 require_once './library/functions.php';
 
+
 // Get the array of classifications
 $classifications = getClassifications();
 

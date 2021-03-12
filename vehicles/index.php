@@ -196,7 +196,8 @@ if($regOutcome === 1){
       if (count($invInfo) < 1) {
          $message = 'Sorry, no vehicle information could be found.';
     }
-    include '../view/vehicle-delete.php';
+    // include '../view/vehicle-delete.php';
+    echo $invId;
     exit;
     break;
 
@@ -205,7 +206,8 @@ if($regOutcome === 1){
 	$invModel = filter_input(INPUT_POST, 'invModel', FILTER_SANITIZE_STRING);
 	$invId = filter_input(INPUT_POST, 'invId', FILTER_SANITIZE_NUMBER_INT);
 		
-	$deleteResult = 'deleteVehicle'($invId);
+  // echo $invId;
+	$deleteResult = deleteVehicle($invId);
 	if ($deleteResult) {
 		$message = "<p class='notice'>Congratulations the, $invMake $invModel was   successfully deleted.</p>";
 		$_SESSION['message'] = $message;
@@ -236,11 +238,9 @@ if($regOutcome === 1){
     // $_SESSION['vehicleData'] = $vehicleData;
     include '../view/vehicle-detail.php';
     break;
-
 default:
 
   $classificationList = buildClassificationList($classifications);
-
   include '../view/vehicles-man.php';
   break;
 

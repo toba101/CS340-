@@ -6,23 +6,34 @@ function checkEmail($clientEmail){
     return $valEmail;
    }
 
+   
 function checkPassword($clientPassword){
     $pattern = '/^(?=.*[[:digit:]])(?=.*[[:punct:]])(?=.*[A-Z])(?=.*[a-z])([^\s]){8,}$/';
     return preg_match($pattern, $clientPassword);
 }
 
-//NAVIGATION
-function navList($classifications){
-$navList = '<ul class="navigation">';
-$navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
-foreach ($classifications as $classification) {
-    $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName="
-    .urlencode($classification['classificationName']).
-    "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
-}
-    $navList .= '';
+function navList($classifications) {
+    $navList = '<ul>';
+    $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
+    foreach ($classifications as $classification) {
+       $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName=".urlencode($classification['classificationName']). "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
+    }
+    $navList .= '</ul>';
     return $navList;
 }
+// //NAVIGATION
+// function navList($classifications){
+// $navList = '<ul class="navigation">';
+// $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
+// foreach ($classifications as $classification) {
+//     $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName="
+//     .urlencode($classification['classificationName']).
+//     "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
+// }
+//     $navList .= '';
+//     return $navList;
+// }
+
 // Build the classifications select list 
 function buildClassificationList($classifications){ 
 $classificationList = '<select name="classificationId" id="classificationList">'; 

@@ -35,8 +35,8 @@ $classificationDropDown .= '</select>';
   <title><?php if(isset($invInfo['invMake'])){ 
 	echo "Delete $invInfo[invMake] $invInfo[invModel]";} ?> | PHP Motors Delete</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/phpmotors/css/small.css" type="text/css" rel="stylesheet" media="screen">
-  <link href="/phpmotors/css/large.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="/phpmotors/styles/small.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="/phpmotors/styles/large.css" type="text/css" rel="stylesheet" media="screen">
 </head>
 
 <body>

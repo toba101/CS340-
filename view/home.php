@@ -3,19 +3,12 @@
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
-
-<body>
-
-
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
-<nav>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
- <!-- echo $navList;   -->
-</nav>
+<nav><?php echo $navList; ?></nav>
 
+<body>
 <main>
-
             <div class="page-content">
                 <h1>Welcome to PHP Motors!</h1>
                     <h2>DMC Delorean</h2>
@@ -25,17 +18,17 @@
             </div>
 
             <div class="button-click">
-                <img src="/phpmotors/images/site/own_today.png" alt="button">
+                <img src="/phpmotors/images/vehicles/own_today.png" alt="button">
             </div>
 
             <div class="content-pic">
-            <img src="/phpmotors/images/upgrades/delorean-497.jpg" alt="car">
+            <img src="/phpmotors/images/vehicles/escalade.jpg" alt="car">
             </div>
 
                
-            <h4>Delorean Upgrade</h4>   
+           <h4>Delorean Upgrade</h4>   
         <div class="container">
-            <div class="box-a">
+             <div class="box-a">
                 <img src="/phpmotors/images/upgrades/flux-cap.png" alt="flux cap">
                 <p>flux Cap</p>
             </div>
@@ -55,25 +48,18 @@
                 <p>Hub-Cap</p>
             </div>    
         </div> 
-         <h2>DMC Delorean Review</h2>
-        <ul class= "dolerean-list">
-            <li><p>"So fast its just like traveling in time."(4/5)</p></li>
-            <li><p><strong>.</strong>"Coolest ride on the road."(4/5)</p></li>
-            <li><p><strong>.</strong>"I am feeling Marty McFly."(5/5)</p></li>
-            <li><p><strong>.</strong>"So fast its just like traveling in time."(4/5)</p></li>
-            <li><p><strong>.</strong>"The most futuristic ride of our days."(4.5/5)</p></li>
-            <li><p><strong>.</strong>"So fast its just like traveling in time."(4/5)</p></li>
-        </ul>
-                
-            <!-- <div class="box-e">
-                <h4>DMC Delorean Review</h4>
-                <p>"So fast its just like traveling in time."(4/5)</p>
-                <p><strong>.</strong>"Coolest ride on the road."(4/5)</p>
-                <p><strong>.</strong>"I am feeling Marty McFly."(5/5)</p>
-                
-                
-                <p><strong>.</strong>"80's livivng and i love it."(5/5)<br>
-            </div> -->
+
+            <h2>DMC Delorean Review</h2>    
+            <ul class= "dolerean-list">
+                <li> So fast its just like traveling in time.(4/5)</li>
+                <li> Coolest ride on the road.(4/5)</li>
+                <li> I am feeling Marty McFly.(5/5)</li>
+                <li> So fast its just like traveling in time.(4/5)</li>
+                <li> The most futuristic ride of our days.(4.5/5) </li>
+                <li> So fast its just like traveling in time.(4/5) </li>
+            </ul>
+        </div>      
+            
 
     </main>
 

@@ -18,7 +18,7 @@ echo $_SESSION['clientData']['clientFirstname'];
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>  
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
- 
+
 <h1>Update User Information</h1>
 <?php
 if (isset($message)) {
@@ -84,7 +84,7 @@ if (isset($message)) {
     1 capital letter and 1 special character.</span>
 
     </td></tr>
-    <span>>Note: this will change your password.</span>
+    <p>>Note: this will change your password.</p>
     <tr><td colspan="2">  
     <input type="submit" name="submit" id="regbtn" value="update Password">
     </td></tr>

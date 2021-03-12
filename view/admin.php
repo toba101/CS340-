@@ -21,15 +21,15 @@ if(!$_SESSION['loggedin']){
 
   <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>  
 
-  <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
+  <nav><?php echo $navList; ?></nav>
 
   <?php if(isset($_SESSION['clientData']['clientFirstname'])){
  echo "<h1>".$_SESSION['clientData']['clientFirstname']." ".$_SESSION['clientData']['clientLastname']."</h1>";
 } 
 ?> 
 <p>You are logged in.</p>
-<ul>
-<!-- <li>
+<!--<ul>
+ <li>
     if(isset($_SESSION['clientData']['clientFirstname'])){
       echo "<p>First Name:".$_SESSION['clientData']['clientFirstname']."</p>";
     }
@@ -50,14 +50,14 @@ if(!$_SESSION['loggedin']){
     ?>
   </li> -->
   <h2>Account Management</h2>
-<p>Use this link to update account information.</p>
-<a href="/phpmotors/accounts?action=clientInfo">Update Client Information</a> 
+  <p>Use this link to update account information.</p>
+  <a href="/phpmotors/accounts?action=updateAccountview">Update Client Information</a> 
 
-<br>
+  <br>
 
-<h2>Inventory Management</h2>
-<p>Use this link to manage the inventory.</p>
-<a href='/phpmotors/vehicles'>Vehicle Management</>";
+  <h2>Inventory Management</h2>
+  <p>Use this link to manage the inventory.</p>
+  <a href='/phpmotors/vehicles/'>Vehicle Management</a>
 
 
 </main>

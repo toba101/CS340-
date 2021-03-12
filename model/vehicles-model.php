@@ -179,39 +179,16 @@ function deleteVehicle($invId) {
     return $rowsChanged;
    }
 
-   function getVehiclesByClassification($classificationName)
-{
+   function getVehiclesByClassification($classificationName){
     $db = phpmotorsConnect();
-
-    //The SQL statement
-    $sql =
-        'SELECT * 
-        FROM inventory JOIN images
-        ON inventory.invId = images.invId
-        WHERE imgPrimary = "1" AND imgPath LIKE "%-tn.%" AND classificationId IN(
-            SELECT classificationId
-            FROM carclassification
-            WHERE classificationName = :classificationName 
-        )';
-
-    //create the prepared statement using the PHP Motors connection
+    $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
     $stmt = $db->prepare($sql);
-
-    //Replace the placeholder & give data type
     $stmt->bindValue(':classificationName', $classificationName, PDO::PARAM_STR);
-
-    //Execute the sql
     $stmt->execute();
-
-    //Fetch the data as an associative array
     $vehicles = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //Close the database interaction
     $stmt->closeCursor();
-
-    //Return the indication of success
     return $vehicles;
-}
+   }
 
 function getVehicleById($invId)
 {

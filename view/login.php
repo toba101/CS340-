@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
-
 <body>
+
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
@@ -13,7 +13,7 @@
 <h1>Sign in</h1>
   <?php
   if (isset($message)) {
-    echo $_SESSION['message'];
+    echo $message;
 }
   if (isset($_SESSION['message'])) {
     echo $_SESSION['message'];

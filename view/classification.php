@@ -27,10 +27,9 @@
 } ?>
 
 <hr>
+</main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php';?>
-
-</main>
 
 <script>
 function myFunction() {

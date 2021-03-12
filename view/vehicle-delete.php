@@ -10,7 +10,7 @@ $classifications = getClassifications();
 
 $classificationDropDown = '<select id="classification" name="classificationId">';
 $classificationDropDown .= '<option>Choose a car classification</option>';
-foreach ($classificationList as $classification) {
+foreach ($classifications as $classification) {
  $classificationDropDown .= "<option value='$classification[classificationId]'";
 
 
@@ -40,56 +40,54 @@ $classificationDropDown .= '</select>';
 </head>
 
 <body>
-
-<header>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';
-?>  
-</header> 
-
-<nav>
-<?php
-require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php';?>
-</nav>
-
-<?php
-if($message){
-echo "<h6 color='red'>".$message."</h6>";
-}
-?>
-
 <main>
-  <article>
 
-  <h1><?php if(isset($invInfo['invMake'])){ 
-	echo "Delete $invInfo[invMake] $invInfo[invModel]";} ?></h1>
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>  
+ 
+<!--  require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?> -->
+<nav> <?php echo $navList; ?> </nav>
+
+
+<h1><?php if(isset($invInfo['invMake'])){ 
+	echo "Delete $invInfo[invMake] $invInfo[invModel]";} ?>
+</h1>
 <p>Confirm Vehicle Deletion. The delete is permanent.</p>
 
 <form method="post" action="/phpmotors/vehicles/">
 <fieldset>
 <table class="regForm">
- <tr><td><label for="invMake">Vehicle Make</label>
+<tr><td>
+  <label for="invMake">Vehicle Make</label>
 	<input type="text" readonly name="invMake" id="invMake" <?php
-if(isset($invInfo['invMake'])) {echo "value='$invInfo[invMake]'"; }?>>
+    if(isset($invInfo['invMake'])) {echo "value='$invInfo[invMake]'"; }?>>
 </tr></td>
- <tr><td><label for="invModel">Vehicle Model</label>
+
+<tr><td>
+  <label for="invModel">Vehicle Model</label>
 	<input type="text" readonly name="invModel" id="invModel" <?php
 if(isset($invInfo['invModel'])) {echo "value='$invInfo[invModel]'"; }?>>
 </tr></td>
-<tr><td><label for="invDescription">Vehicle Description</label>
-	<textarea name="invDescription" readonly id="invDescription"><?php
+
+<tr><td>
+  <label for="invDescription">Vehicle Description</label>
+	<textarea name="invDescription" readonly id="invDescription">
+<?php
 if(isset($invInfo['invDescription'])) {echo $invInfo['invDescription']; }
-?></textarea>
+?>
+</textarea>
 </tr></td>
+
 <tr><td>
 <input type="submit" class="regbtn" name="submit" value="Delete Vehicle">
 
-	<input type="hidden" name="action" value="deleteVehicle">
-	<input type="hidden" name="invId" value="<?php if(isset($invInfo['invId'])){
+<input type="hidden" name="action" value="deleteVehicle">
+<input type="hidden" name="invId" value="<?php if(isset($invInfo['invId'])){
 echo $invInfo['invId'];} ?>">
 </td></tr>
-    </table>
+</table>
 </fieldset>
 </form>
+
 </main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>

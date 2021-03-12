@@ -7,7 +7,7 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
 <?php
 // Get the array of classifications
 //   $classification = getClassifications();
-$classificationId = $invInfo["classificationId"];
+// $classificationList = $invInfo["classificationId"];
 
 $classificationDropDown = '<select id="classification" name="classificationId">';
 $classificationDropDown .= '<option>Choose a car classification</option>';
@@ -28,8 +28,9 @@ if($classification['classificationId'] === $classificationId){
 }
 $classificationDropDown .= '</select>';
 
-// Refactor array values
-$invId = $invInfo[0]["invId"];
+var_dump($invInfo);
+//Refactor array values
+// $invId = $invInfo[0]["invId"];
 $invMake = $invInfo[0]["invMake"];
 $invModel = $invInfo[0]["invModel"];
 $invDescription = $invInfo[0]["invDescription"] ;
@@ -56,8 +57,8 @@ $imgPrimary = $invInfo[0]["imgPrimary"];
         elseif(isset($invMake) && isset($invModel)) { 
 		echo "Modify $invMake $invModel"; }?>PHP Motors Add Vehicle</title>
 <meta charset="utf-8">
-<link href="/PHPMOTORS/css/small.styles" rel="stylesheet" media="screen">
-<link href="/phpmotors/css/large.styles" rel="stylesheet" media="screen">
+<link href="/phpmotors/styles/small.css" rel="stylesheet" media="screen">
+<link href="/phpmotors/styles/large.css" rel="stylesheet" media="screen">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -68,9 +69,7 @@ $imgPrimary = $invInfo[0]["imgPrimary"];
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
-<nav>
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php';?> 
-</nav>
+<nav><?php  echo $navList; ?></nav>
 
 <h1><?php if(isset($invInfo['invMake']) && isset($invInfo['invModel'])){ 
 		echo "Modify $invInfo[invMake] $invInfo[invModel]";} 

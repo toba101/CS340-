@@ -1,4 +1,12 @@
-@media all and (min-width: 550px) {  
+/* @media all and (min-width: 550px) {   */
+    html{
+        box-sizing: border-box;
+       }
+       
+       *, *:before, *:after{
+        box-sizing: inherit;
+       }
+
 html {
     background-image: url("../images/site/small_check.jpg");
     font-family: 'Roboto Slab', serif;
@@ -100,50 +108,6 @@ nav ul {
           border: 2px dotted rgb(96, 139, 168);
         }
       }
-
-/* nav {
-    font-size: 1rem;
-    background-color: #3a3a3a;
-}
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    font-weight: 700;
-}
-
-nav ul li {
-    cursor: pointer;
-    padding: 10px;
-    margin: 2px;
-}
-
-nav ul li a {
-    color: #ffffff;
-    
-} 
-
-nav ul li:hover {
-    background-color: #4c96d7;
-}
-
- 
-@media all and (max-width: 450px) {
-    nav ul {
-        flex-direction: column;
-}
-
-nav ul li {
-    text-align: center;
-    }
-
-.content-pic img {
-width: 80%;
-} */
-
-
 /*********** MAIN HERE********* */
 main {
     max-width:100%;
@@ -223,18 +187,19 @@ div.box-d p {
     margin-left: 1rem;
 }
 
-.box-e p {
+main h2 {
     text-align: right;
-    padding-right: 4rem;
-    margin-bottom: 1rem;
-    word-wrap: normal;
-    color: black;
+    padding-right: 10rem;
 }
 
-.box-e h4 {
-    text-align: right;
-    margin-right: 7rem;
-} 
+ul.dolerean-list {
+    text-align: end;
+    padding-right: 7rem;
+    margin-bottom: 3rem;
+}
+
+
+
 
 /*********** Border ************/
 hr.new3 {
@@ -247,7 +212,6 @@ footer {
     padding: 5px;
     margin: 0.5rem;
     font-size: 15px; 
-}
 }
 }
 /******Login form*************/ 
@@ -273,5 +237,22 @@ fieldset.wrap {
     margin: auto;
     width: min-content;
     }
-    
+  
+    #inv-display{
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+       }
+       
+       #inv-display li{
+        margin-bottom: .5em;
+        border: 1px #ccc solid;
+        list-style-type: none;
+        flex: 1 1 auto;
+       }
+       
+       #inv-display li img {
+           max-width: 100%;
+       }
   

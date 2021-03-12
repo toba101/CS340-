@@ -131,21 +131,9 @@
             margin-left: 1rem;
         }
         
-        ul dolerean-list {
-            text-align: right;
-            padding-right: 4rem;
-            margin-bottom: 1rem;
-            word-wrap: normal;
-            color: black;
-        }
+    
         
-        .box-e h4 {
-            text-align: right;
-            margin-right: 7rem;
-            margin-top: 1rem;
-            padding-left: 4rem;
-        } 
-
+       
         /******Login form*************/ 
 
     fieldset.wrap {
@@ -172,4 +160,28 @@
             margin: 0.5rem;
             font-size: 15px; 
         }
+
+        /* For vehicle display in classification view */
+	#inv-display {
+		flex-flow: row wrap;
+		justify-content: flex-start;
+	}
+
+	#inv-display h2{
+		font-size: 1rem;
+	}
+
+	#inv-display li {
+		max-width: 200px;
+		flex: 1 0 auto;
+		text-align: center;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+      
+	#inv-display div {
+		width: 100%;
+	}
 } 

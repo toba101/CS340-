@@ -32,9 +32,7 @@ $classificationDropDown .= '</select>';
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
-<nav>
-<?php echo $navList; ?>
-</nav>
+<nav><?php echo $navList; ?></nav>
 
 <?php
 if(isset($message))

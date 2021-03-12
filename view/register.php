@@ -1,12 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-us">
 
-
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
-
 <body>
-
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 

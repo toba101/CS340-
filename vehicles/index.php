@@ -16,6 +16,7 @@ require_once '../model/main-model.php';
 // Get the accounts model
 require_once '../model/vehicles-model.php';
 
+
 // Dynamic Navigation
 // Get the array of classifications
 $classifications = getClassifications();
@@ -114,8 +115,18 @@ if($regOutcome === 1){
     case 'vehicle':
     include '../view/vehicles-man.php';
     break;
+
     case 'classification';
-      include '../view/add-classification.php';
+    $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
+    $vehicles = getVehiclesByClassification($classificationName);
+    if(!count($vehicles)){
+     $message = "<p class='notice'>Sorry, no $classificationName could be found.</p>";
+    } else {
+     $vehicleDisplay = buildVehiclesDisplay($vehicles);
+    //  echo $vehicleDisplay;
+    // exit;
+    }
+    include '../view/add-classification.php';
     break;
 
     case 'mod':
@@ -209,25 +220,29 @@ if($regOutcome === 1){
 	}
 	break;
 
-//   case 'vehicleDetails':
-//   $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
+  case 'vehicleDetails':
+    $invId = filter_input(INPUT_GET, 'invId', FILTER_VALIDATE_INT);
 
-//   $vehicle = getInvItemInfo($invId);
+    $vehicle = getInvItemInfo($invId);
 
-//   $vehicleDisplay = buildVehicle($vehicle);
+    $vehicleDisplay = buildVehiclesDisplay($vehicle);
 
-//     // echo 'this is an id: '. $invId;
-//     // var_dump($vehicleData);
+    // echo 'this is an id: '. $invId;
+    // var_dump($vehicleData);
 
-//     // Create review Info
-//     // $reviews = getreviews($invId);
+    // Create review Info
+    // $reviews = getreviews($invId);
 
-//     // $_SESSION['vehicleData'] = $vehicleData;
-//   include '../view/vehicle-detail.php';
-//   break;
+    // $_SESSION['vehicleData'] = $vehicleData;
+    include '../view/vehicle-detail.php';
+    break;
+
 default:
+
   $classificationList = buildClassificationList($classifications);
+
   include '../view/vehicles-man.php';
   break;
+
 }
 ?>

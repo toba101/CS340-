@@ -13,18 +13,16 @@ function checkPassword($clientPassword){
 
 //NAVIGATION
 function navList($classifications){
- 
 $navList = '<ul class="navigation">';
 $navList .= "<li><a href='/phpmotors/' title='View the PHP Motors home page'>Home</a></li>";
 foreach ($classifications as $classification) {
     $navList .= "<li><a href='/phpmotors/vehicles/?action=classification&classificationName="
-    .urlencode($classification['classificationName'])."' title='View our $classification[classificationName] 
-    lineup of vehicles'>$classification[classificationName]</a></li>";
+    .urlencode($classification['classificationName']).
+    "' title='View our $classification[classificationName] lineup of vehicles'>$classification[classificationName]</a></li>";
 }
     $navList .= '';
     return $navList;
 }
-
 // Build the classifications select list 
 function buildClassificationList($classifications){ 
 $classificationList = '<select name="classificationId" id="classificationList">'; 
@@ -34,27 +32,6 @@ $classificationList .= "<option value='$classification[classificationId]'>$class
 } 
 $classificationList .= '</select>'; 
 return $classificationList; 
-}
-
-function buildVehicleDisplay($vehicles)
-{
-    $dv = '<ul id="inv-display">';
-
-    foreach ($vehicles as $vehicle) {
-        $price = number_format($vehicle['invPrice']);
-
-        $dv .= '<li>';
-        $dv .= "<a href='index.php?action=vehicleInfo&invId=$vehicle[invId]'><img src ='$vehicle[imgPath]' alt='Picture of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
-        $dv .= '<div class="namePrice">';
-        $dv .= '<hr>';
-        $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-        $dv .= "<span>$$price</span>";
-        $dv .= '</div></a>';
-        $dv .= '</li>';
-    }
-    $dv .= '</ul>';
-
-    return $dv;
 }
 
 function updatePassword($hashedPassword, $clientId)
@@ -85,4 +62,61 @@ function updatePassword($hashedPassword, $clientId)
 
     //Return the indication of success
     return $rowsChanged;
+}
+function buildVehiclesDisplay($vehicles){
+    $dv = '<ul id="inv-display">';
+    foreach ($vehicles as $vehicle) {
+     $dv .= '<li>';
+     $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
+     $dv .= '<hr>';
+     $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+     $dv .= "<span>$vehicle[invPrice]</span>";
+     $dv .= '</li>';
+    }
+    $dv .= '</ul>';
+    return $dv;
+   }
+
+//Building thumbnails list 
+function buildThumbnails($vehicles){
+    //$dv = ""; 
+    $dv = "<ul id='inv-thumbnail'>";
+    foreach ($vehicles as $vehicle) {
+    $dv .= "<li><img src='$vehicle[imgPath]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></li>";
+    }
+    $dv .= "</ul>";
+     return $dv; 
+   }
+
+function buildReviewDetails($reviews){
+$rd = '<ul class="reviews">';
+foreach ($reviews as $review) {
+    //get user
+    $firstInitial = strtoupper(substr($review['clientFirstname'], 0, 1));
+    $lastInitial = strtoupper(substr($review['clientLastname'], 0, 1));
+    $lastName = strtolower(substr($review['clientLastname'], 1));
+    $screenName = $firstInitial . $lastInitial . $lastName;
+
+    //get date
+    $unix = strtotime($review['reviewDate']);
+    $date = date("M j Y", $unix);
+
+    $rd .= '<li>';
+    $rd .= "<p class='review-screenname'>$screenName</p>";
+    $rd .= "<p class='review-date'>$date</p>";
+    $rd .= "<p class='review-text'>$review[reviewText]</p>";
+    $rd .= '</li>';
+}
+    $rd .= '</ul>';
+    return $rd;
+}
+
+function buildScreenName()
+{
+    $firstInitial = strtoupper(substr($_SESSION['clientData']['clientFirstname'], 0, 1));
+    $lastInitial = strtoupper(substr($_SESSION['clientData']['clientLastname'], 0, 1));
+    $lastName = strtolower(substr($_SESSION['clientData']['clientLastname'], 1));
+    $screenName = $firstInitial . $lastInitial . $lastName;
+
+    return $screenName;
 }

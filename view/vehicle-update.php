@@ -9,43 +9,23 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
 //   $classification = getClassifications();
 // $classificationList = $invInfo["classificationId"];
 
-$classificationDropDown = '<select id="classification" name="classificationId">';
-$classificationDropDown .= '<option>Choose a car classification</option>';
+$classificationList  = '<label for="classificationId">Car Type</label><br>';
+$classificationList  .= '<select class="loginInput" name="classificationId" id="classificationId">';
+$classificationList .= "<option>Choose a Classification</option>";
 foreach ($classifications as $classification) {
- $classificationDropDown .= "<option value='$classification[classificationId]'";
-
-
-if (isset($classificationId)){
-if($classification['classificationId'] === $classificationId){
-    $classificationDropDown .= ' selected ';
-  }
-} elseif(isset($invInfo['classificationId'])){
-    if($classification['classificationId'] === 2){
-     $classificationDropDown .= ' selected ';
+  $classificationList  .= "<option value='$classification[classificationId]'";
+  if (isset($classificationId)) {
+    if ($classificationId  === $classification['classificationId']) {
+      $classificationList .= " selected ";
     }
- }
- $classificationDropDown .=">$classification[classificationName]</option>";
+  } elseif (isset($invInfo['classificationId'])) {
+    if ($classification['classificationId'] === $invInfo['classificationId']) {
+      $classificationList .= ' selected ';
+    }
+  }
+  $classificationList .= ">$classification[classificationName]</option>";
 }
-$classificationDropDown .= '</select>';
-
-var_dump($invInfo);
-//Refactor array values
-// $invId = $invInfo[0]["invId"];
-$invMake = $invInfo[0]["invMake"];
-$invModel = $invInfo[0]["invModel"];
-$invDescription = $invInfo[0]["invDescription"] ;
-$invImage = $invInfo[0]["invImage"];
-$invThumbnail = $invInfo[0]["invThumbnail"] ;
-$invPrice = $invInfo[0]["invPrice"] ;
-$invStock = $invInfo[0]["invStock"];
-$invColor = $invInfo[0]["invColor"];
-$classificationId = $invInfo[0]["classificationId"];
-$imgId = $invInfo[0]["imgId"];
-$imgName = $invInfo[0]["imgName"];
-$imgPath = $invInfo[0]["imgPath"];
-$tnPath = $invInfo[1]["imgPath"];
-$imgDate = $invInfo[0]["imgDate"];
-$imgPrimary = $invInfo[0]["imgPrimary"];
+$classificationList  .= '</select>';
 
 ?><!DOCTYPE html>
 <html lang="en-us">
@@ -82,7 +62,7 @@ $imgPrimary = $invInfo[0]["imgPrimary"];
 <tr><td>
 <label id="classificationId">Classification<abbr class="req">*</abbr></label>
 </td><td>
-<?php echo $classificationDropDown; ?>
+<?php echo $classificationList; ?> 
 </td></tr>
      
 <tr><td>
@@ -92,8 +72,8 @@ $imgPrimary = $invInfo[0]["imgPrimary"];
 <?php
 if (isset($invMake)) {
     echo "value='$invMake'";
-    } elseif (isset($invInfo[0]['invMake'])) {
-    echo 'value="' . $invInfo[0]['invMake'] . '"';
+    } elseif (isset($invInfo['invMake'])) {
+    echo 'value="' . $invInfo['invMake'] . '"';
     }  ?> type="text" id="invMake" name="invMake" placeholder="Required" autofocus required>
     </td></tr>
 

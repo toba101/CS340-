@@ -110,11 +110,11 @@ if($regOutcome === 1){
     include '../view/add-classification.php';
     exit;
     }
-    
-    break;
-    case 'vehicle':
-    include '../view/vehicles-man.php';
-    break;
+  break;
+
+    // case 'vehicle':
+    // include '../view/vehicles-man.php';
+    // break;
 
     case 'classification';
     $classificationName = filter_input(INPUT_GET, 'classificationName', FILTER_SANITIZE_STRING);
@@ -123,10 +123,8 @@ if($regOutcome === 1){
      $message = "<p class='notice'>Sorry, no $classificationName could be found.</p>";
     } else {
      $vehicleDisplay = buildVehiclesDisplay($vehicles);
-    //  echo $vehicleDisplay;
-    // exit;
     }
-    include '../view/add-classification.php';
+    include '../view/classification.php';
     break;
 
     case 'mod':
@@ -135,7 +133,7 @@ if($regOutcome === 1){
     //get the info on that item based on id
     $invInfo = getInvItemInfo($invId);
 
-    // // echo $invId;
+    // echo $invId;
     // var_dump($invInfo);
 
     //If no info, display message
@@ -196,8 +194,7 @@ if($regOutcome === 1){
       if (count($invInfo) < 1) {
          $message = 'Sorry, no vehicle information could be found.';
     }
-    // include '../view/vehicle-delete.php';
-    echo $invId;
+    include '../view/vehicle-delete.php';
     exit;
     break;
 

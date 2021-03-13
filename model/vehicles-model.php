@@ -103,13 +103,21 @@ function getInventoryByClassification($classificationId)
 function getInvItemInfo($invId)
 {
     $db = phpmotorsConnect();
+    $sql = 'SELECT *
+    FROM inventory 
+    where invId = :invId';
+    // $sql = 'SELECT invId, invMake, invModel, invStock, invColor, invPrice, classificationId, invDescription, imgPath, imgName
+    // FROM inventory 
+    // join images using (invId)
+    // where invId = :invId and imgPath not like "%-tn%"';
+
 
     //The SQL statement
-    $sql =
-        'SELECT * 
-        FROM inventory JOIN images
-        ON inventory.invId = images.invId
-        WHERE inventory.invId = :invId AND imgPrimary = "1"';
+    // $sql =
+    //     'SELECT * 
+    //     FROM inventory JOIN images
+    //     ON inventory.invId = images.invId
+    //     WHERE inventory.invId = :invId AND imgPrimary = "1"';
 
     //create the prepared statement using the PHP Motors connection
     $stmt = $db->prepare($sql);
@@ -121,7 +129,7 @@ function getInvItemInfo($invId)
     $stmt->execute();
 
     //Fetch the data as an associative array
-    $invInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    $invInfo = $stmt->fetch(PDO::FETCH_ASSOC);
 
     //Close the database interaction
     $stmt->closeCursor();

@@ -76,6 +76,30 @@ function buildVehiclesDisplay($vehicles){
     return $dv;
    }
 
+// Build images display for image management view
+// function buildImageDisplay($imageArray) {
+//     $id = '<ul id="image-display">';
+//     foreach ($imageArray as $image) {
+//      $id .= '<li>';
+//      $id .= "<img src='$image[imgPath]' title='$image[invMake] $image[invModel] image on PHP Motors.com' alt='$image[invMake] $image[invModel] image on PHP Motors.com'>";
+//      $id .= "<p><a class= 'account' href='/phpmotors/uploads?action=delete&imgId=$image[imgId]&filename=$image[imgName]' title='Delete the image'>Delete $image[imgName]</a></p>";
+//      $id .= '</li>';
+//    }
+//     $id .= '</ul>';
+//     return $id;
+//    }
+   // Build the vehicles select list
+function buildVehiclesSelect($vehicles) {
+    $prodList = '<select name="invId" id="invId">';
+    $prodList .= "<option>Choose a Vehicle</option>";
+    foreach ($vehicles as $vehicle) {
+     $prodList .= "<option value='$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</option>";
+    }
+    $prodList .= '</select>';
+    return $prodList;
+   }
+
+
 //Building thumbnails list 
 function buildThumbnails($vehicles){
     //$dv = ""; 
@@ -141,19 +165,6 @@ function buildImageDisplay($imageArray) {
     $id .= '</ul>';
     return $id;
    }
-   // Build the vehicles select list
-
-function buildVehiclesSelect($vehicles) {
-    $prodList = '<select name="invId" id="invId">';
-    $prodList .= "<option>Choose a Vehicle</option>";
-    foreach ($vehicles as $vehicle) {
-     $prodList .= "<option value='$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</option>";
-    }
-    $prodList .= '</select>';
-    return $prodList;
-   }
-   // Handles the file upload process and returns the path
-// The file path is stored into the database
 
 function uploadFile($name) {
     // Gets the paths, full and local directory

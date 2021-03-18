@@ -225,3 +225,4 @@ function getVehicleById($invId){
     //Return the indication of success
     return $vehicles;
 }
+?>

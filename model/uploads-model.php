@@ -139,3 +139,4 @@ function checkExistingImage($imgName)
     return $imgMatch;
 }
 }
+?>

@@ -1,5 +1,5 @@
 <?php
-//Image uploads controller 
+// //Image uploads controller 
 session_start();
 
 require_once '../library/connections.php';
@@ -27,13 +27,14 @@ $image_dir = '/phpmotors/images/vehicles';
 // The path is the full path from the server root
 $image_dir_path = $_SERVER['DOCUMENT_ROOT'] . $image_dir;
 
+
 switch ($action) {
-    case 'upload':
-  // Store the incoming vehicle id and primary picture indicator
-	$invId = filter_input(INPUT_POST, 'invId', FILTER_VALIDATE_INT);
-	$imgPrimary = filter_input(INPUT_POST, 'imgPrimary', FILTER_VALIDATE_INT);
+case 'upload':
+// Store the incoming vehicle id and primary picture indicator
+$invId = filter_input(INPUT_POST, 'invId', FILTER_VALIDATE_INT);
+$imgPrimary = filter_input(INPUT_POST, 'imgPrimary', FILTER_VALIDATE_INT);
 	
-	// Store the name of the uploaded image
+// Store the name of the uploaded image
  $imgName = $_FILES['file1']['name'];
       
  $imageCheck = checkExistingImage($imgName);
@@ -61,11 +62,11 @@ switch ($action) {
  $_SESSION['message'] = $message;
       
  // Redirect to this controller for default action
- header('location: .');      
-    break;
+ header('location: .');
+break;
 
-    case 'delete':
-   // Get the image name and id
+case 'delete':
+// Get the image name and id
 $filename = filter_input(INPUT_GET, 'filename', FILTER_SANITIZE_STRING);
 $imgId = filter_input(INPUT_GET, 'imgId', FILTER_VALIDATE_INT);
       
@@ -93,13 +94,8 @@ if ($remove) {
 // Store message to session
 $_SESSION['message'] = $message;
       
-// Redirect to this controller for default action
-header('location: .');
 
-    break;
-    default:
-
-    // Call function to return image info from database
+// Call function to return image info from database
 $imageArray = getImages();
       
 // Build the image information into HTML for display
@@ -117,10 +113,22 @@ $prodSelect = buildVehiclesSelect($vehicles);
 include '../view/image-admin.php';
 exit;
 
-break;
-
-default:
-    include '../view/image-admin.php';
+// Redirect to this controller for default action
+header('location: .');
     break;
+default:
 }
-?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

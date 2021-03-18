@@ -177,7 +177,7 @@ function uploadFile($name) {
     // Returns the path where the file is stored
     return $filepath;
     }
-   }
+}
    // Processes images by getting paths and 
 // creating smaller versions of the image
 
@@ -257,3 +257,4 @@ function resizeImage($old_image_path, $new_image_path, $max_width, $max_height) 
      // Free any memory associated with the old image
      imagedestroy($old_image);
    } // ends resizeImage function
+   ?>

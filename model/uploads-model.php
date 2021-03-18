@@ -10,7 +10,7 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
  $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
  $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
  $stmt->execute();
-     
+  
  // Make and store the thumbnail image information
  // Change name in path
 //  $imgPath = makeThumbnailName($imgPath);
@@ -28,13 +28,10 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
 // }
 
 //Get img info from images table
-function getImages()
-{
+function getImages() {
     $db = phpmotorsConnect();
-
     //The SQL statement
-    $sql =
-        'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, invMake, invModel
+    $sql = 'SELECT imgId, imgPath, imgName, imgDate, inventory.invId, invMake, invModel
         FROM images JOIN inventory ON images.invId = inventory.invId';
 
     //create the prepared statement using the PHP Motors connection
@@ -141,4 +138,4 @@ function checkExistingImage($imgName)
     //Return the indication of success
     return $imgMatch;
 }
-?> 
+}

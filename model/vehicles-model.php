@@ -106,18 +106,6 @@ function getInvItemInfo($invId)
     $sql = 'SELECT *
     FROM inventory 
     where invId = :invId';
-    // $sql = 'SELECT invId, invMake, invModel, invStock, invColor, invPrice, classificationId, invDescription, imgPath, imgName
-    // FROM inventory 
-    // join images using (invId)
-    // where invId = :invId and imgPath not like "%-tn%"';
-
-
-    //The SQL statement
-    // $sql =
-    //     'SELECT * 
-    //     FROM inventory JOIN images
-    //     ON inventory.invId = images.invId
-    //     WHERE inventory.invId = :invId AND imgPrimary = "1"';
 
     //create the prepared statement using the PHP Motors connection
     $stmt = $db->prepare($sql);
@@ -187,7 +175,7 @@ function deleteVehicle($invId) {
     return $rowsChanged;
    }
 
-   function getVehiclesByClassification($classificationName){
+function getVehiclesByClassification($classificationName){
     $db = phpmotorsConnect();
     $sql = 'SELECT * FROM inventory WHERE classificationId IN (SELECT classificationId FROM carclassification WHERE classificationName = :classificationName)';
     $stmt = $db->prepare($sql);
@@ -198,8 +186,18 @@ function deleteVehicle($invId) {
     return $vehicles;
    }
 
-function getVehicleById($invId)
-{
+// Get information for all vehicles
+function getVehicles(){
+	$db = phpmotorsConnect();
+	$sql = 'SELECT invId, invMake, invModel FROM inventory';
+	$stmt = $db->prepare($sql);
+	$stmt->execute();
+	$invInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
+	$stmt->closeCursor();
+	return $invInfo;
+}
+
+function getVehicleById($invId){
     $db = phpmotorsConnect();
 
     //The SQL statement
@@ -227,30 +225,3 @@ function getVehicleById($invId)
     //Return the indication of success
     return $vehicles;
 }
-
-//get info for all vehicles
-function getVehicles()
-{
-    $db = phpmotorsConnect();
-
-    //The SQL statement
-    $sql =
-        'SELECT invId, invMake, invModel 
-        FROM inventory';
-
-    //create the prepared statement using the PHP Motors connection
-    $stmt = $db->prepare($sql);
-
-    //Execute the sql
-    $stmt->execute();
-
-    //Fetch the data as an associative array
-    $invInfo = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    //Close the database interaction
-    $stmt->closeCursor();
-
-    //Return the indication of success
-    return $invInfo;
-}
-?>

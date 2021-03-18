@@ -12,12 +12,11 @@
 <body>
 <main>
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>   
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>
 
-<nav><?php  echo $navList; ?></nav>
+ <nav> <?php echo $navList; ?> </nav> 
 
 <h1><?php echo $classificationName; ?> vehicles</h1>
-
 <?php if(isset($message)){
  echo $message; }
  ?>

@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <title><?php echo $classificationName; ?> vehicles | PHP Motors, Inc.</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/phpmotors/styles/small.css" type="text/styles" rel="stylesheet" media="screen">
-  <link href="/phpmotors/styles/large.css" type="text/styles" rel="stylesheet" media="screen">
+  <link href="/phpmotors/styles/small.css" type="text/css" rel="stylesheet" media="screen">
+  <link href="/phpmotors/styles/large.css" type="textt/css" rel="stylesheet" media="screen">
 </head>
 
 <body>

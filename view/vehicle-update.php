@@ -71,11 +71,11 @@ $classificationList  .= '</select>';
 <input type="text" id="invMake" name="invMake" 
 <?php
 if (isset($invMake)) {
-    echo "value='$invMake'";
-    } elseif (isset($invInfo['invMake'])) {
-    echo 'value="' . $invInfo['invMake'] . '"';
-    }  ?> type="text" id="invMake" name="invMake" placeholder="Required" autofocus required>
-    </td></tr>
+  echo "value='$invMake'";
+  } elseif (isset($invInfo[0]['invMake'])) {
+  echo 'value="' . $invInfo[0]['invMake'] . '"';
+  }  ?> type="text" id="invMake" name="invMake" placeholder="Required" autofocus required>
+</td></tr>
 
     <tr><td>
     <label for="invModel">Model<abbr class="req">*</abbr></label>
@@ -105,7 +105,7 @@ if (isset($invMake)) {
     if(isset($invImage)){ 
         echo "value='$invImage'"; } 
         elseif(isset($imgPath)) {
-        echo "value='$imgPath'"; 
+          echo "value='$imgPath'"; 
     }
     ?> required>
     </td></tr>
@@ -118,7 +118,7 @@ if (isset($invMake)) {
     if(isset($invThumbnail)){ 
         echo "value='$invThumbnail'"; } 
         elseif(isset($tnPath)) {
-        echo "value='$tnPath'"; 
+          echo "value='$tnPath'"; 
     }
     ?> required>
     </td></tr>

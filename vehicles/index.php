@@ -224,16 +224,16 @@ if($regOutcome === 1){
 
     $vehicle = getInvItemInfo($invId);
 
-    $vehicleDisplay = buildVehiclesDisplay($vehicle);
+    $vehicleDisplay = buildVehicleDetails($vehicle);
 
     // echo 'this is an id: '. $invId;
-    // var_dump($vehicleData);
+    // var_dump($vehicle);
 
     // Create review Info
     // $reviews = getreviews($invId);
 
     // $_SESSION['vehicleData'] = $vehicleData;
-    include '../view/vehicle-detail.php';
+      include '../view/vehicle-detail.php';
     break;
 default:
 

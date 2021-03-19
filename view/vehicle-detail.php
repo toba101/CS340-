@@ -6,8 +6,7 @@
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?> 
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php';?>
-<!-- <nav> echo $navList; </nav> -->
+<nav> <?php echo $navList; ?> </nav>
 <main>
 
 <?php // var_dump($vehicleData)?>

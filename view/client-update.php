@@ -17,7 +17,7 @@ echo $_SESSION['clientData']['clientFirstname'];
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>  
 
-<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?>
+<nav><?php echo $navList; ?></nav>
 
 <h1>Update User Information</h1>
 <?php

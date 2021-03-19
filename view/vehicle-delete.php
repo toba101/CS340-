@@ -44,7 +44,6 @@ $classificationDropDown .= '</select>';
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>  
  
-<!--  require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/navigation.php'; ?> -->
 <nav> <?php echo $navList; ?> </nav>
 
 

@@ -62,17 +62,64 @@ function updatePassword($hashedPassword, $clientId)
     //Return the indication of success
     return $rowsChanged;
 }
-function buildVehiclesDisplay($vehicles){
-    $dv = '<ul id="inv-display">';
-    foreach ($vehicles as $vehicle) {
+
+function buildThumbImages($thumbImages) {
+    $dv = '<ul>';
+    foreach ($thumbImages as $thumbImage) {
      $dv .= '<li>';
-     $dv .= "<img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'>";
-     $dv .= '<hr>';
-     $dv .= "<h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-     $dv .= "<span>$vehicle[invPrice]</span>";
-     $dv .= '</li>';
+     $dv .= "<img class='thumbCarList' src='$thumbImage[imgPath]' alt='Image of $thumbImage[imgName] on phpmotors.com'>"; 
+     $dv .= '</li>'; 
     }
     $dv .= '</ul>';
+    return $dv;    
+   }
+
+   // Build a display of vehicles within an unordered list.
+    function buildVehiclesDisplay($vehicles){
+        $dv = '<ul id="inv-display">';
+        foreach ($vehicles as $vehicle) {
+         $dv .= '<li>';
+         $dv .= "<a href='/phpmotors/vehicles/index.php/?action=vehicleDetails&invId=$vehicle[invId]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
+         $dv .= '<hr>';
+         //$dv .= "$vehicle[invThumbnail]";
+         $dv .= "<h2><a href='/phpmotors/vehicles/index.php/?action=vehicleDetails&invId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
+         $dv .=   "<span>$".number_format($vehicle['invPrice'],2)."</span>";
+         $dv .= '</li>';
+        }
+        $dv .= '</ul>';
+        return $dv;
+       }
+
+//    function buildVehiclesDisplay($vehicles){
+//     $dv = '<ul id="inv-display">';
+//     foreach ($vehicles as $vehicle) {
+//      $price = number_format($vehicle['invPrice'], 2, '.',',');
+//      $dv .= '<li>';
+//      $dv .= "<a class='account' href='/phpmotors/vehicles/index.php/?action=vehicleDetails&carId=".$vehicle['invId']."'>
+//             <img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
+//      $dv .= '<div class="carDisplay"><hr>';
+//      $dv .= "<a class='account' href='/phpmotors/vehicles/index.php/?action=vehicleDetails&carId=".$vehicle['invId']."'>
+//             <h2>$vehicle[invMake] $vehicle[invModel]</h2>";
+//      $dv .= "<span class='price'>Price: $$price</span><br>";
+//      $dv .= "</a></div>"; 
+//      $dv .= '</li>'; 
+//     }
+//     $dv .= '</ul>';
+//     return $dv;
+//    }
+
+   function buildVehicleDetails($carId) {
+    // $className = $class;
+    $price = number_format($carId['invPrice'], 2, '.',',');
+    $dv = "<div class='form'><img class='carImage' src='$carId[invThumbnail]' alt='image of $carId[invMake] $carId[invModel] on phpmotors.com'></div>";
+    $dv .= "<div class='form'><h2>$carId[invMake] $carId[invModel] </h2>";
+    $dv .= "<h3 id='price'>Price: $$price  </h3>";
+    // $dv .= "<P>Car Type: $className[classificationName] </p>";
+        if ($carId['invDescription']) {
+            $dv .= "<P>Description:  $carId[invDescription]  </p>";
+        }
+    $dv .= "<P>Number in Stock: $carId[invStock]  </p>";
+    $dv .= "<P>Color: $carId[invColor]  </p></div>";
     return $dv;
    }
 
@@ -89,6 +136,7 @@ function buildVehiclesDisplay($vehicles){
 //     return $id;
 //    }
    // Build the vehicles select list
+
 function buildVehiclesSelect($vehicles) {
     $prodList = '<select name="invId" id="invId">';
     $prodList .= "<option>Choose a Vehicle</option>";

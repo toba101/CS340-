@@ -1,5 +1,5 @@
 <?php
-// VHICLES MODEL
+// VEHICLES MODEL
 
 //Register new client
 function insertvehicle($invMake, $invModel, $invDescription, $invImage, $invThumbnail, $invPrice, $invStock, $invColor, $classificationId)

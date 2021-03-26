@@ -12,7 +12,7 @@ require_once '../model/accounts-model.php';
 // Get the functions library
 require_once '../library/functions.php';
 //Get the reviews model
-// require_once '../models/reviews-model.php';
+require_once '../model/review-model.php';
 
 // Get the array of classifications
 $classifications = getClassifications();
@@ -65,7 +65,17 @@ switch ($action){
     array_pop($clientData);
     // Store the array into the session
     $_SESSION['clientData'] = $clientData;
-    // Send them to the admin view
+
+    //Check if the firstname cookie exists- if it does, delete the cookie
+    if (isset($_COOKIE['firstname'])) {
+        setcookie('firstname', "", strtotime('+1 year'), "/");
+}
+
+//Get user's reviews
+$userReviews = getReviewsByUser($_SESSION['clientData']['clientId']);
+$_SESSION['userReviews'] = $userReviews;
+
+// Send them to the admin view
     include '../view/admin.php';
     exit;
 

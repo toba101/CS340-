@@ -1,12 +1,5 @@
-/* @media all and (min-width: 550px) {   */
-    html{
-        box-sizing: border-box;
-       }
-       
-       *, *:before, *:after{
-        box-sizing: inherit;
-       }
-
+@media all and (min-width: 550px) {  
+    
 html {
     background-image: url("../images/site/small_check.jpg");
     font-family: 'Roboto Slab', serif;
@@ -82,7 +75,7 @@ nav ul {
       .topnav a.icon {
         float: right;
         display: block;
-      
+      }
     }
     
     @media screen and (max-width: 600px) {
@@ -92,6 +85,7 @@ nav ul {
         right: 10px;
         top: 10px;
       }
+    }
       .topnav.responsive a {
         float: none;
         display: block;
@@ -107,7 +101,7 @@ nav ul {
           width: max-content;
           border: 2px dotted rgb(96, 139, 168);
         }
-      }
+    }
 /*********** MAIN HERE********* */
 main {
     max-width:100%;
@@ -195,9 +189,13 @@ main h2 {
 ul.dolerean-list {
     text-align: end;
     padding-right: 7rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
 }
-
+h2 {
+    text-align: end;
+    padding-right: 7rem;
+    margin-bottom: 2rem;
+}
 
 
 
@@ -213,7 +211,7 @@ footer {
     margin: 0.5rem;
     font-size: 15px; 
 }
-}
+
 /******Login form*************/ 
 
 fieldset.wrap {
@@ -238,21 +236,95 @@ fieldset.wrap {
     width: min-content;
     }
   
-    #inv-display{
+   /* * * * * * * * * * * * * * * * CLASSIFICATION DISPLAY * * * * * * * * * * * * * * * * * */
+#classification-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#inv-display{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    /*flex-direction: column;*/
+    flex-flow: row wrap;
+    justify-content: center;
+    
+   }
+   
+   #inv-display li{
+    margin: 1em .5em;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    list-style-type: none;
+    max-width: 200px;
+    flex: 1 0 auto;
+    text-align: center;
+    height: 280px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+   }
+   
+   #inv-display li img {
+       max-width: 100%;
+       border-radius: 5px 5px 0 0;
+   }
+
+   #inv-display div {
+    width: 100%;
+}
+#inv-display a{
+    text-decoration: none;
+}
+.namePrice h2{
+    margin: .75em 0 .25em 0;
+}
+
+.namePrice span{
+    padding: .25em 0;
+}
+
+    
+/* * * * * * * * * * * * * * * * REVIEWS * * * * * * * * * * * * * * * * * */
+       ul.reviews{
         margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-       }
-       
-       #inv-display li{
-        margin-bottom: .5em;
-        border: 1px #ccc solid;
-        list-style-type: none;
-        flex: 1 1 auto;
-       }
-       
-       #inv-display li img {
-           max-width: 100%;
-       }
-  
+        padding: 1em;
+    }
+    
+    .reviews li{
+        background-color: #e7e7e7;
+        padding: 1em;
+        margin: .5em 0;
+        border-radius: 5px;
+        display: grid;
+        grid-template-areas: 'user date'
+                             'text text'
+                             'edit delete';
+    }
+    
+    .review-screenname{
+        grid-area: user;
+    }
+    
+    .review-date{
+        grid-area: date;
+        text-align: right;
+    }
+    
+    .review-text{
+        grid-area: text;
+        font-style: italic;
+    }
+    
+    .review-edit{
+        grid-area: edit;
+    }
+    
+    .review-delete{
+        grid-area: delete;
+        text-align: right;
+    }

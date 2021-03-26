@@ -14,7 +14,7 @@
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?>
 
- <nav> <?php echo $navList; ?> </nav> 
+<nav><?php echo $navList; ?></nav> 
 
 <h1><?php echo $classificationName; ?> vehicles</h1>
 <?php if(isset($message)){
@@ -31,14 +31,14 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php';?>
 
 <script>
-function myFunction() {
-  var x = document.getElementById("myTopnav");
-  if (x.className === "topnav") {
-    x.className += " responsive";
-  } else {
-    x.className = "topnav";
-  }
-}
+// function myFunction() {
+//   var x = document.getElementById("myTopnav");
+//   if (x.className === "topnav") {
+//     x.className += " responsive";
+//   } else {
+//     x.className = "topnav";
+//   }
+// }
 </script>
 
 </body>

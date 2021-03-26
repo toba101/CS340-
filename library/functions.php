@@ -181,7 +181,6 @@ foreach ($reviews as $review) {
     $rd .= '</ul>';
     return $rd;
 }
-
 function buildScreenName()
 {
     $firstInitial = strtoupper(substr($_SESSION['clientData']['clientFirstname'], 0, 1));

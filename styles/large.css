@@ -1,9 +1,7 @@
-@media all and (min-width: 920px) {  
-        html{
-            background-image: url("../images/site/small_check.jpg");
-        }
+@media all and (min-width: 920px) { 
         
         body { 
+            background-image: url("../images/site/small_check.jpg");
             background-color: #ffffff;
             margin: 40px;
             margin-left: 8rem;
@@ -47,7 +45,6 @@
  
         nav ul li a {
             color: #ffffff;
-            
         } 
 
         nav ul li:hover {
@@ -131,11 +128,19 @@
             margin-left: 1rem;
         }
         
-    
+        ul.dolerean-list {
+            text-align: end;
+            padding-right: 7rem;
+            margin-bottom: 2rem;
+        }
         
+        h2 {
+            text-align: end;
+            padding-right: 7rem;
+            margin-bottom: 2rem;
+        }
        
         /******Login form*************/ 
-
     fieldset.wrap {
     display: flex;
     flex-direction: column;
@@ -147,21 +152,17 @@
     }
     
     /********Registration******/
-
-        /*********** Border ************/
-        hr.new3 {
-            border-top: 1px rgb(34, 33, 33);
-          } 
-        
-        footer {
-            text-align: center;
-            justify-content: center;
-            padding: 5px;
-            margin: 0.5rem;
-            font-size: 15px; 
+    fieldset.wrap {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        flex-wrap: wrap;
+        width: 10em;
+        margin: auto;
+        width: min-content;
         }
 
-        /* For vehicle display in classification view */
+/* For vehicle display in classification view */
 	#inv-display {
 		flex-flow: row wrap;
 		justify-content: flex-start;
@@ -183,5 +184,52 @@
       
 	#inv-display div {
 		width: 100%;
-	}
-} 
+	} 
+    
+/* * * * * * * * * * * * * * * * VEHICLE DETAILS * * * * * * * * * * * * * * * * * */
+.vehicle-details{
+    display: grid;
+    grid-template-columns: .33fr 1fr 1fr;
+    grid-gap: 1em;
+    grid-template-areas: 'tn img details';
+}
+
+
+#tn-display img{
+    transition: .3s;
+    max-width: 100%;
+    margin: 0 0 1em 0;
+    object-fit: contain;
+}
+#tn-display img:hover{
+    transform: scale(1.25, 1.25);
+}
+
+#tn-display{
+    display: flex;
+    flex-direction: column;
+    grid-area: tn;
+    max-width: 100%;
+}
+
+.vehicle-details>img {
+    grid-area: img;
+}
+
+#mobile-tn-header{
+    display: none;
+}
+
+/*********** Border ************/
+        hr.new3 {
+            border-top: 1px rgb(34, 33, 33);
+          } 
+        
+        footer {
+            text-align: center;
+            justify-content: center;
+            padding: 5px;
+            margin: 0.5rem;
+            font-size: 15px; 
+        }
+}

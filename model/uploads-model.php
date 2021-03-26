@@ -13,19 +13,19 @@ function storeImages($imgPath, $invId, $imgName, $imgPrimary) {
   
  // Make and store the thumbnail image information
  // Change name in path
-//  $imgPath = makeThumbnailName($imgPath);
-//  // Change name in file name
-//  $imgName = makeThumbnailName($imgName);
-//  $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
-//  $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
-//  $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
-//  $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
-//  $stmt->execute();
+ $imgPath = makeThumbnailName($imgPath);
+ // Change name in file name
+ $imgName = makeThumbnailName($imgName);
+ $stmt->bindValue(':invId', $invId, PDO::PARAM_INT);
+ $stmt->bindValue(':imgPath', $imgPath, PDO::PARAM_STR);
+ $stmt->bindValue(':imgName', $imgName, PDO::PARAM_STR);
+ $stmt->bindValue(':imgPrimary', $imgPrimary, PDO::PARAM_INT);
+ $stmt->execute();
  
-//  $rowsChanged = $stmt->rowCount();
-//  $stmt->closeCursor();
-//  return $rowsChanged;
-// }
+ $rowsChanged = $stmt->rowCount();
+ $stmt->closeCursor();
+ return $rowsChanged;
+}
 
 //Get img info from images table
 function getImages() {
@@ -137,6 +137,5 @@ function checkExistingImage($imgName)
 
     //Return the indication of success
     return $imgMatch;
-}
 }
 ?>

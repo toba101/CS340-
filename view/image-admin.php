@@ -8,8 +8,8 @@ if (isset($_SESSION['message'])) {
 <head>
 <title>Image Management</title>
 <meta charset="utf-8">
-<link href="/phpmotors/css/small.css" rel="stylesheet" media="screen">
-<link href="/phpmotors/css/large.css" rel="stylesheet" media="screen">
+<link href="/phpmotors/styles/small.css" rel="stylesheet" media="screen">
+<link href="/phpmotors/styles/large.css" rel="stylesheet" media="screen">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -17,7 +17,7 @@ if (isset($_SESSION['message'])) {
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?> 
 
-<nav><?php echo $navList; ?></nav>
+<nav><?php echo $navList;?></nav>
 
 <main>
   <h1>Image Management</h1>
@@ -28,7 +28,7 @@ if (isset($_SESSION['message'])) {
  } ?>
 <form action="/phpmotors/uploads/" method="post" enctype="multipart/form-data">
  <label for="invItem">Vehicle</label>
-  <?php echo $prodSelect;?>
+  <?php echo $prodSelect;?> 
     <fieldset>
         <label>Is this the main image for the vehicle?</label>
         <label for="priYes" class="pImage">Yes</label>
@@ -50,10 +50,10 @@ if (isset($_SESSION['message'])) {
  } ?>
 </main>
 
-<footer>
-  <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/common/footer.php'; ?>
-</footer>
+<hr>
+
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?>
 
 </body>
 </html>
-<?php unset($_SESSION['message']); ?>
+ <!-- unset($_SESSION['message']); -->

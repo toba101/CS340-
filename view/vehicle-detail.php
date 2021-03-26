@@ -6,7 +6,7 @@
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?> 
 
-<nav> <?php echo $navList; ?> </nav>
+<nav><?php echo $navList;?></nav>
 <main>
 
 <?php // var_dump($vehicleData)?>
@@ -74,4 +74,4 @@ echo "<table><tr id='both'><td id='thumb'><h2 class='hidden'>Thumbnails</h2>".$v
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php';?>
 
 </body>
-</html
+</html>

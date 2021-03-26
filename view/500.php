@@ -35,3 +35,6 @@
   <footer>
      <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/footer.php'; ?> 
   </footer> 
+
+  </body>
+  </html>

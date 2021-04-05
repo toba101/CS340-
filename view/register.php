@@ -4,6 +4,7 @@
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
 <body>
+<main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
@@ -11,7 +12,6 @@
   <?php  echo $navList; ?>
 </nav>
 
-<main>
 <h1>Register</h1>
   <?php
 if (isset($message)) {

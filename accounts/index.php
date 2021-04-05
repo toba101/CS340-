@@ -72,8 +72,8 @@ switch ($action){
 }
 
 //Get user's reviews
-$userReviews = getReviewsByUser($_SESSION['clientData']['clientId']);
-$_SESSION['userReviews'] = $userReviews;
+// $userReviews = getReviewsByUser($_SESSION['clientData']['clientId']);
+// $_SESSION['userReviews'] = $userReviews;
 
 // Send them to the admin view
     include '../view/admin.php';
@@ -223,6 +223,8 @@ case 'register':
   break;
     
 default:
+$userReviews = getReviewsByUser($_SESSION['clientData']['clientId']);
+$_SESSION['userReviews'] = $userReviews;
     //Check to see that user is logged in
     include '../view/admin.php';
     break;

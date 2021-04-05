@@ -34,7 +34,7 @@ switch ($action) {
         $screenName = filter_input(INPUT_POST, 'screenName', FILTER_SANITIZE_STRING);
         $reviewText = filter_input(INPUT_POST, 'reviewText', FILTER_SANITIZE_STRING);
 
-        //Check for missing data
+        // Check for missing data
         if (empty($reviewText)) {
             $_SESSION['reviewMessage'] = "<p class='warning'>Please provide text for your review before attempting to submit.</p>";
             header('Location: http://localhost/phpmotors/vehicles/index.php?action=vehicleInfo&invId=' . $invId);
@@ -46,16 +46,18 @@ switch ($action) {
             $_SESSION['reviewMessage'] = "<p>Thank you. Your review has now been added. You can see it below!</p>";
 
             //update user's reviews
-            $userReviews = getReviewsByUser($clientId);
+            // $userReviews = getReviewsByUser($clientId);
             $_SESSION['userReviews'] = $userReviews;
 
-            header('Location: http://localhost/phpmotors/vehicles/index.php?action=vehicleInfo&invId=' . $invId);
+            header('location: /phpmotors/accounts/');
+
             exit;
         } else {
             $message = "<p>Sorry, but the vehicle registration failed. Please try again.</p>";
             include '../view/add-vehicle.php';
             exit;
-        }break;
+        }
+        break;
 
 //	Deliver a view to edit a review.
     case 'editreview':

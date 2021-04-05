@@ -2,6 +2,7 @@
 <html lang="en-us">
 
 <body>
+<main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
@@ -9,7 +10,7 @@
 
 <nav><?php  echo $navList; ?></nav>
 
-<main>
+
 <h1>Sign in</h1>
   <?php
   if (isset($message)) {

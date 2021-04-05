@@ -40,7 +40,7 @@
                     $yr = date("Y", $unix);
                     echo "$mo/$day/$yr";
                     } ?>" />
-                    <label for="reviewScreenName">Screen Name </label>
+                    <label id="reviewScreenName">Screen Name </label>
                     <input type="text" name="reviewScreenName" readonly value="<?php if (isset($_SESSION['clientData'])) {
                         //get date
                     $screenName = buildScreenName();

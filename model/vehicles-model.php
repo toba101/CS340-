@@ -104,9 +104,9 @@ function getInvItemInfo($invId)
 {
     $db = phpmotorsConnect();
     $sql = 'SELECT *
-    FROM inventory 
-    where invId = :invId';
-
+    FROM inventory JOIN images USING (invId)
+    where invId = :invId AND imgPrimary = TRUE AND imgPath NOT LIKE "%-tn%"';
+       
     //create the prepared statement using the PHP Motors connection
     $stmt = $db->prepare($sql);
 

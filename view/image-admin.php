@@ -14,12 +14,13 @@ if (isset($_SESSION['message'])) {
 </head>
 
 <body>
+<main>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php';?> 
 
 <nav><?php echo $navList;?></nav>
 
-<main>
+
   <h1>Image Management</h1>
   <h2>Add New Vehicle Image</h2>
 <?php

@@ -11,9 +11,9 @@
 
 <?php // var_dump($vehicleData)?>
 
-<h1><?php 
+<?php 
 // echo $vehicleData[0]['invMake'] . ' ' . $vehicleData[0]['invModel'] 
-?></h1>
+?>
     <p>Reviews can be found beneath the vehicle details.</p>
     <?php
     //  if (isset($message)) {
@@ -41,9 +41,9 @@
     //Add review form
     $reviewForm = '<form method="post" action="/phpmotors/reviews/index.php"><fieldset>';
     $reviewForm .= '<legend>Add Your Review</legend>';
-    $reviewForm .= '<label for="screenName">Screen Name</label>';
+    $reviewForm .= '<label id="screenName">Screen Name</label>';
     $reviewForm .= "<input name='screenName' type='text' readonly value='$screenName'>";
-    $reviewForm .= '<label for="reviewText" >Your Review</label>';
+    $reviewForm .= '<label id="reviewText" >Your Review</label>';
     $reviewForm .= '<textarea name="reviewText"></textArea>';
     $reviewForm .=  '<input type="submit" name="submit" value="Add Review" class="primary-button">';
     $reviewForm .=  '<input type="hidden" name="action" value="addreview">';
@@ -52,7 +52,8 @@
     $reviewForm .= '</fieldset></form>';
     echo $reviewForm;
 }
-
+ if ($reviewUser){echo $reviewUser;} 
+ 
             // if (count($reviews) == 0) {
             //     echo '<p>Be the first to review!</p>';
             // } else {

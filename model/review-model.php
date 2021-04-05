@@ -73,12 +73,10 @@ function getReviewsByUser($clientId)
     $db = phpmotorsConnect();
 
     //The SQL statement
-    $sql =
-        'SELECT reviewText, reviewDate, reviewId, clientFirstname, clientLastname
-        FROM reviews JOIN clients
-        ON reviews.clientId = clients.clientId
-        WHERE reviews.clientId = :clientId
-        ORDER BY reviewDate DESC';
+    $sql = 'SELECT reviewId, reviewText, reviewDate, clientFirstname, clientLastname, invMake, invModel FROM reviews 
+    JOIN clients using (clientId) 
+    JOIN inventory using (invId)
+    WHERE clientId = :clientId ORDER BY reviewDate DESC';
 
 
     //Create the prepared statement using the PHP Motors connection

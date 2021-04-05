@@ -28,12 +28,14 @@ $classificationDropDown .= '</select>';
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
-<main>
+<body>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
 <nav><?php echo $navList; ?></nav>
 
+<main>
+  
 <?php
 if(isset($message))
   echo $message;

@@ -23,7 +23,7 @@
             <form method="post" action="/phpmotors/reviews/index.php">
                 <fieldset>
                     <legend>Update Review</legend>
-                    <label for="reviewDate">Date </label>
+                    <label id="reviewDate">Date </label>
                     <input type="text" name="reviewDate" readonly value="<?php if (isset($reviewDetails)) {
                              //get date
                     $unix = strtotime($reviewDetails['reviewDate']);
@@ -38,13 +38,13 @@
                     $yr = date("Y", $unix);
                     echo "$mo/$day/$yr";
                     } ?>" />
-                    <label for="reviewScreenName">Screen Name </label>
+                    <label id="reviewScreenName">Screen Name </label>
                     <input type="text" name="reviewScreenName" readonly value="<?php if (isset($_SESSION['clientData'])) {
                      //get date
                     $screenName = buildScreenName();
                     echo "$screenName";
                                                                                 } ?>" />
-                    <label for="reviewText">Review </label>
+                    <label id="reviewText">Review </label>
                     <textarea name="reviewText">
                         <?php if (isset($reviewDetails)) {
                                     echo $reviewDetails['reviewText'];

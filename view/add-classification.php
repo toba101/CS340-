@@ -9,7 +9,7 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 
-<main>
+<body>
 
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>
 
@@ -17,6 +17,7 @@ if ($_SESSION['clientData']['clientLevel'] < 2) {
 <?php echo $navList; ?>
 </nav>
 
+<main>
 
 <h1>Add Car Classification</h1>
 <form class="add" action="/phpmotors/vehicles/index.php" method="post">

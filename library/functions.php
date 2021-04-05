@@ -1,5 +1,4 @@
 <?php
-
 // Validate email address
 function checkEmail($clientEmail){
     $valEmail = filter_var($clientEmail, FILTER_VALIDATE_EMAIL);
@@ -63,6 +62,12 @@ function updatePassword($hashedPassword, $clientId)
     return $rowsChanged;
 }
 
+function checkImg($path)
+{
+    $pattern = '([^\s]+(\.(?i)(jpg|png|gif|bmp))$)';
+    return preg_match($pattern, $path);
+}
+
 function buildThumbImages($thumbImages) {
     $dv = '<ul>';
     foreach ($thumbImages as $thumbImage) {
@@ -81,7 +86,7 @@ function buildThumbImages($thumbImages) {
          $dv .= '<li>';
          $dv .= "<a href='/phpmotors/vehicles/index.php/?action=vehicleDetails&invId=$vehicle[invId]'><img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
          $dv .= '<hr>';
-         //$dv .= "$vehicle[invThumbnail]";
+        //  $dv .= "$vehicle[invThumbnail]";
          $dv .= "<h2><a href='/phpmotors/vehicles/index.php/?action=vehicleDetails&invId=$vehicle[invId]'>$vehicle[invMake] $vehicle[invModel]</a></h2>";
          $dv .=   "<span>$".number_format($vehicle['invPrice'],2)."</span>";
          $dv .= '</li>';
@@ -90,28 +95,10 @@ function buildThumbImages($thumbImages) {
         return $dv;
        }
 
-//    function buildVehiclesDisplay($vehicles){
-//     $dv = '<ul id="inv-display">';
-//     foreach ($vehicles as $vehicle) {
-//      $price = number_format($vehicle['invPrice'], 2, '.',',');
-//      $dv .= '<li>';
-//      $dv .= "<a class='account' href='/phpmotors/vehicles/index.php/?action=vehicleDetails&carId=".$vehicle['invId']."'>
-//             <img src='$vehicle[invThumbnail]' alt='Image of $vehicle[invMake] $vehicle[invModel] on phpmotors.com'></a>";
-//      $dv .= '<div class="carDisplay"><hr>';
-//      $dv .= "<a class='account' href='/phpmotors/vehicles/index.php/?action=vehicleDetails&carId=".$vehicle['invId']."'>
-//             <h2>$vehicle[invMake] $vehicle[invModel]</h2>";
-//      $dv .= "<span class='price'>Price: $$price</span><br>";
-//      $dv .= "</a></div>"; 
-//      $dv .= '</li>'; 
-//     }
-//     $dv .= '</ul>';
-//     return $dv;
-//    }
-
    function buildVehicleDetails($carId) {
     // $className = $class;
     $price = number_format($carId['invPrice'], 2, '.',',');
-    $dv = "<div class='form'><img class='carImage' src='$carId[invThumbnail]' alt='image of $carId[invMake] $carId[invModel] on phpmotors.com'></div>";
+    $dv = "<div class='form'><img class='carImage' src='$carId[imgPath]' alt='image of $carId[invMake] $carId[invModel] on phpmotors.com'></div>";
     $dv .= "<div class='form'><h2>$carId[invMake] $carId[invModel] </h2>";
     $dv .= "<h3 id='price'>Price: $$price  </h3>";
     // $dv .= "<P>Car Type: $className[classificationName] </p>";
@@ -123,20 +110,38 @@ function buildThumbImages($thumbImages) {
     return $dv;
    }
 
-// Build images display for image management view
-// function buildImageDisplay($imageArray) {
-//     $id = '<ul id="image-display">';
-//     foreach ($imageArray as $image) {
-//      $id .= '<li>';
-//      $id .= "<img src='$image[imgPath]' title='$image[invMake] $image[invModel] image on PHP Motors.com' alt='$image[invMake] $image[invModel] image on PHP Motors.com'>";
-//      $id .= "<p><a class= 'account' href='/phpmotors/uploads?action=delete&imgId=$image[imgId]&filename=$image[imgName]' title='Delete the image'>Delete $image[imgName]</a></p>";
-//      $id .= '</li>';
-//    }
-//     $id .= '</ul>';
-//     return $id;
-//    }
-   // Build the vehicles select list
+   function buildUserReviewDetails($reviews){
 
+    $rd = '<ul class="reviews">';
+
+    foreach ($reviews as $review) {
+        //get user
+        $firstInitial = strtoupper(substr($review['clientFirstname'], 0, 1));
+        $lastInitial = strtoupper(substr($review['clientLastname'], 0, 1));
+        $lastName = strtolower(substr($review['clientLastname'], 1));
+        $screenName = $firstInitial . $lastInitial . $lastName;
+
+        //get date
+        $unix = strtotime($review['reviewDate']);
+        $date = date("M j Y", $unix);
+
+        $reviewId = $review['reviewId'];
+
+        $rd .= '<li>';
+        $rd .= "<a href='/phpmotors/reviews/index.php?action=editreview&reviewid=$reviewId' class='review-edit'>Edit</a>";
+        $rd .= "<a href='/phpmotors/reviews/index.php?action=deletereview&reviewid=$reviewId' class='review-delete'>Delete</a>";
+        $rd .= "<p class='review-screenname'>$screenName</p>";
+        $rd .= "<p class='review-date'>$date</p>";
+        $rd .= "<p class='review-text'>$review[reviewText]</p>";
+        $rd .= '</li>';
+    }
+
+    $rd .= '</ul>';
+
+    return $rd;
+}
+   
+// Build the vehicles select list
 function buildVehiclesSelect($vehicles) {
     $prodList = '<select name="invId" id="invId">';
     $prodList .= "<option>Choose a Vehicle</option>";

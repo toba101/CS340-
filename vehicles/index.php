@@ -227,11 +227,10 @@ if($regOutcome === 1){
 
     $vehicleDisplay = buildVehicleDetails($vehicle);
 
-    // echo 'this is an id: '. $invId;
-    // var_dump($vehicle);
-
     // Create review Info
-    // $reviews = getreviews($invId);
+    $reviews = getReviewsByInvId($invId);
+  
+    $reviewUser = buildReviewDetails($reviews);
 
     // $_SESSION['vehicleData'] = $vehicleData;
       include '../view/vehicle-detail.php';

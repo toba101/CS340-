@@ -17,17 +17,23 @@ if(!$_SESSION['loggedin']){
 <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/head.php'; ?>
 <body>
 
+<?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>  
+
+<nav><?php echo $navList; ?></nav>
+
 <main>
-
-  <?php require $_SERVER['DOCUMENT_ROOT'] . '/phpmotors/snippets/header.php'; ?>  
-
-  <nav><?php echo $navList; ?></nav>
-
   <?php if(isset($_SESSION['clientData']['clientFirstname'])){
  echo "<h1>".$_SESSION['clientData']['clientFirstname']." ".$_SESSION['clientData']['clientLastname']."</h1>";
 } 
 ?> 
 <p>You are logged in.</p>
+<?php
+if(isset($_SESSION['$reviewMessage'])){
+      echo $_SESSION['reviewMessage'];
+    }
+  ?>
+
+
 <!--<ul>
  <li>
     if(isset($_SESSION['clientData']['clientFirstname'])){
@@ -59,7 +65,13 @@ if(!$_SESSION['loggedin']){
   <p>Use this link to manage the inventory.</p>
   <a href='/phpmotors/vehicles/'>Vehicle Management</a>
 
-
+ <h2>Review Management</h2>
+    <?php
+      if (isset($_SESSION['userReviews'])) {
+        echo buildUserReviewDetails($_SESSION['userReviews']);
+      } else {
+        echo '<p>Once you leave reviews on the site, you can access them here.</p>';}
+?>
 </main>
   <hr>
 
